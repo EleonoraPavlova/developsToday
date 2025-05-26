@@ -12,7 +12,7 @@ interface Props {
   cuisines: Cuisine | ''
   search: string
   sort: SortOption
-  setSort: (sort: SortOption) => void
+  setSort: (_sort: SortOption) => void
   disabled: boolean
   cookingTime: number | null
   setSearch: (_search: ChangeEvent<HTMLInputElement>) => void
