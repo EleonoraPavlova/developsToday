@@ -5,6 +5,23 @@ export type RecipesRandomRequest = {
   number: number
 }
 
+export type RecipesFilterRequest = {
+  query?: string
+  cuisine?: string
+  maxReadyTime?: number
+  sort?: SortOption
+  sortDirection?: 'asc' | 'desc'
+}
+
+export const SORT_OPTIONS = [
+  { label: 'Popularity', value: 'popularity' },
+  { label: 'Price', value: 'price' },
+  { label: 'Time', value: 'time' },
+  { label: 'Healthiness', value: 'healthiness' },
+] as const
+
+export type SortOption = (typeof SORT_OPTIONS)[number]['value']
+
 export type RecipesRandomModel = {
   recipes: Recipe[]
 }
