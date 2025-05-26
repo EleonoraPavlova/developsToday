@@ -15,7 +15,7 @@ const Logo = ({ isClickable = true }: Props): ReactElement => {
 
   const router = useRouter()
 
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: MouseEvent<HTMLElement>) => {
     if (isClickable) {
       e.preventDefault()
       router.push('/')
@@ -31,7 +31,7 @@ const Logo = ({ isClickable = true }: Props): ReactElement => {
           <Beef />
         </div>
       </Button>
-      <div className='gap-1 flex flex-col items-start'>
+      <div className='gap-1 flex flex-col items-start cursor-pointer' onClick={handleClick}>
         <Typography as='h3' variant='h2'>
           {logoName}
         </Typography>

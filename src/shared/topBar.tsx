@@ -4,17 +4,21 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import DropdownComponent from '@/shared/dropdown-menu'
 import SortPopover from '@/shared/sortPopover'
+import { SortOption } from '@/store/models/recipes.model'
 import { Cuisine } from '@/types/common'
 
 interface Props {
   data: Cuisine[]
   cuisines: Cuisine | ''
   search: string
+  sort: SortOption
+  setSort: (_sort: SortOption) => void
   disabled: boolean
   cookingTime: number | null
   setSearch: (_search: ChangeEvent<HTMLInputElement>) => void
   setCookingTime: (_time: ChangeEvent<HTMLInputElement>) => void
   onChange: (_cuisines: Cuisine) => void
+  onNext: () => void
 }
 
 const TopBar = ({
@@ -25,7 +29,10 @@ const TopBar = ({
   setCookingTime,
   cookingTime,
   search,
+  sort,
+  setSort,
   setSearch,
+  onNext,
 }: Props): ReactElement => {
   return (
     <div className='flex gap-10 w-full sticky top-0 bg-background z-10'>
@@ -41,8 +48,10 @@ const TopBar = ({
         placeholder='Cooking time'
         className='pl-2'
       />
-      <SortPopover />
-      <Button disabled={disabled}>Next</Button>
+      <SortPopover sort={sort} setSort={setSort} />
+      <Button disabled={disabled} onClick={onNext} className='ml-auto'>
+        Next
+      </Button>
     </div>
   )
 }
