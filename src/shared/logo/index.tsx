@@ -1,4 +1,4 @@
-import { Beef, ChefHat, CookingPot, Hamburger } from 'lucide-react'
+import { Beef, ChefHat, CookingPot } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { MouseEvent, ReactElement } from 'react'
 
@@ -23,12 +23,11 @@ const Logo = ({ isClickable = true }: Props): ReactElement => {
   }
 
   return (
-    <>
+    <div className='flex items-center gap-4'>
       <Button variant='link' size='icon' onClick={handleClick} type='button'>
         <div className='flex flex-col gap-1 items-center'>
           <CookingPot />
           <ChefHat />
-          <Hamburger />
           <Beef />
         </div>
       </Button>
@@ -40,7 +39,7 @@ const Logo = ({ isClickable = true }: Props): ReactElement => {
           {slogan}
         </Typography>
       </div>
-    </>
+    </div>
   )
 }
 

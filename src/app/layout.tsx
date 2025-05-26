@@ -1,5 +1,6 @@
 import './globals.css'
 
+import type { Metadata } from 'next'
 import { Atma } from 'next/font/google'
 import { ReactNode } from 'react'
 
@@ -12,6 +13,14 @@ const atma = Atma({
   subsets: ['latin'],
   display: 'swap',
 })
+
+export const metadata: Metadata = {
+  title: 'Dishes',
+  description: 'Enjoy the best recipes',
+  icons: {
+    icon: '/favicon.ico',
+  },
+}
 
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
