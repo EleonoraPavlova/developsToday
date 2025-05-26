@@ -1,7 +1,7 @@
 import { RecipesRandomModel } from '@/store/models/recipes.model'
 
 export interface recipesRandomState {
-  recipesRandom: RecipesRandomModel
+  recipes: RecipesRandomModel
   isFetching: boolean
   error: Error | null
 }

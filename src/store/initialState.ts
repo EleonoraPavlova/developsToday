@@ -1,7 +1,7 @@
 import { RecipesRandomModel } from '@/store/models/recipes.model'
 
 export const mockRecipesRandomModel: RecipesRandomModel = {
-  recipesRandom: [
+  recipes: [
     {
       id: 641586,
       title: 'Double Chocolate Brownie Semifreddo',
@@ -47,15 +47,15 @@ export const mockRecipesRandomModel: RecipesRandomModel = {
             metric: { amount: 255.146, unitShort: 'g', unitLong: 'grams' },
           },
         },
-        // можно добавить еще ингредиентов по желанию
       ],
-      summary: 'Double Chocolate Brownie Semifreddo — вкусный десерт, который понравится любителям шоколада.',
+      summary:
+        'Double Chocolate Brownie Semifreddo is a delicious dessert perfect for chocolate lovers. Rich, creamy, and gluten-free.',
       cuisines: ['American'],
       dishTypes: ['dessert'],
       diets: ['gluten free'],
       occasions: [],
       instructions:
-        '1. Растопить шоколад на водяной бане.\n2. Взбить яйца с сахаром и ванилью.\n3. Взбить сливки до пиков.\n4. Аккуратно соединить все ингредиенты.\n5. Заморозить в формах на 6+ часов.',
+        '1. Melt the chocolate using a double boiler.\n2. Whisk eggs with sugar and vanilla.\n3. Whip the cream until stiff peaks form.\n4. Gently fold all ingredients together.\n5. Freeze in molds for at least 6 hours.',
       analyzedInstructions: [
         {
           name: '',

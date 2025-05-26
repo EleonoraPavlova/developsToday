@@ -1,9 +1,9 @@
 import { ReactElement } from 'react'
 
-import HomeClient from '@/components/client/home'
+import Recipes from '@/components/recipes'
 
 const Home = (): ReactElement => {
-  return <HomeClient />
+  return <Recipes />
 }
 
 export default Home

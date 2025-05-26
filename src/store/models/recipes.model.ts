@@ -6,7 +6,7 @@ export type RecipesRandomRequest = {
 }
 
 export type RecipesRandomModel = {
-  recipesRandom: Recipe[]
+  recipes: Recipe[]
 }
 
 export type Recipe = {
