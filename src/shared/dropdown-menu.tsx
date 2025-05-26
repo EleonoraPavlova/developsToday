@@ -1,33 +1,27 @@
 import { ReactElement } from 'react'
 
-import {
-  Dropdown,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown'
-import { TabOption } from '@/shared/categoriesTabs/categoriesTabs.const'
+import { Button } from '@/components/ui/button'
+import { Dropdown, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown'
+import { Cuisine } from '@/types/common'
 
 interface Props {
-  data: TabOption[]
-  onChange: (_tab: string) => void
+  data: Cuisine[]
+  cuisines: Cuisine | ''
+  onChange: (_cuisines: Cuisine) => void
 }
 
-const DropdownComponent = ({ data, onChange }: Props): ReactElement => {
+const DropdownComponent = ({ data, onChange, cuisines }: Props): ReactElement => {
   return (
     <Dropdown>
       <DropdownMenuTrigger asChild>
-        <button className='px-4 py-2 border rounded-md'>Select Category</button>
+        <Button variant='outline' className='min-w-[300px]'>
+          {cuisines || 'Select Cuisine'}
+        </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuLabel>Categories</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-
-        {data.map((item) => (
-          <DropdownMenuItem key={item.value} onClick={() => onChange(item.value)}>
-            {item.value}
+      <DropdownMenuContent className='min-w-[300px]'>
+        {data?.map((item) => (
+          <DropdownMenuItem key={item} onClick={() => onChange(item)}>
+            {item}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

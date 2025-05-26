@@ -72,6 +72,7 @@ const config = [
       'simple-import-sort/exports': 'error',
 
       'unused-imports/no-unused-imports': 'error',
+      '@typescript-eslint/no-explicit-any': 'off'
     },
   },
 ]
