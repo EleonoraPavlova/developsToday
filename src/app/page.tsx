@@ -1,9 +1,16 @@
-import { ReactElement } from 'react'
+import RecipesList from '@/components/recipesList'
+import Search from '@/components/search'
+import { getRecipesRandomApi } from '@/store/actions/recipesApi'
 
-import Recipes from '@/components/recipes'
+const Home = async (): Promise<JSX.Element> => {
+  const data = await getRecipesRandomApi({ number: 35, sort: 'popularity' })
 
-const Home = (): ReactElement => {
-  return <Recipes />
+  return (
+    <>
+      <Search />
+      <RecipesList recipes={data.recipes} />
+    </>
+  )
 }
 
 export default Home

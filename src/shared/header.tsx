@@ -1,7 +1,7 @@
 'use client'
 
 import { ShoppingCart, User } from 'lucide-react'
-import { ComponentPropsWithoutRef, ComponentRef, forwardRef } from 'react'
+import { ComponentPropsWithoutRef, ComponentRef, forwardRef, ReactElement } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -10,7 +10,7 @@ import Logo from '@/shared/logo'
 type HeaderProps = ComponentPropsWithoutRef<'header'>
 type HeaderRef = ComponentRef<'header'>
 
-export const Header = forwardRef<HeaderRef, HeaderProps>(({ className, ...rest }, ref) => {
+export const Header = forwardRef<HeaderRef, HeaderProps>(({ className, ...rest }, ref): ReactElement => {
   return (
     <header ref={ref} className={cn('w-full bg-background rounded-t-[30px]', className)} {...rest}>
       <div className='flex items-center gap-4 py-[20px] px-[64px] justify-between'>

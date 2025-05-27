@@ -1,6 +1,6 @@
-import { RecipesRandomModel } from '@/store/models/recipes.model'
+import { RecipesModel } from '@/store/models/recipes.model'
 
-export const mockRecipesRandomModel: RecipesRandomModel = {
+export const mockRecipesModel: RecipesModel = {
   recipes: [
     {
       id: 641586,

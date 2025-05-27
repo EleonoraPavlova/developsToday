@@ -1,39 +1,39 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { getRecipesRandom } from '@/store/actions/recipes'
-import { recipesRandomState } from '@/store/classes/recipesState.class'
-import { mockRecipesRandomModel } from '@/store/initialState'
-import { RecipesRandomModel } from '@/store/models/recipes.model'
+import { getRecipesFilter } from '@/store/actions/recipes.thunks'
+import { recipesState } from '@/store/classes/recipesState.class'
+import { mockRecipesModel } from '@/store/initialState'
+import { RecipesModel } from '@/store/models/recipes.model'
 import { RootState } from '@/store/store'
 
-const initialState: recipesRandomState = {
-  recipes: mockRecipesRandomModel,
+const initialState: recipesState = {
+  recipes: mockRecipesModel,
   isFetching: false,
   error: null,
 }
 
 const recipesSlice = createSlice({
-  name: 'randomRecipes',
+  name: 'filterRecipes',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getRecipesRandom.pending, (state) => {
+    builder.addCase(getRecipesFilter.pending, (state) => {
       state.isFetching = true
     })
-    builder.addCase(getRecipesRandom.fulfilled, (state, action: PayloadAction<RecipesRandomModel>) => {
+    builder.addCase(getRecipesFilter.fulfilled, (state, action: PayloadAction<RecipesModel>) => {
       state.recipes = action.payload
       state.isFetching = false
     })
-    builder.addCase(getRecipesRandom.rejected, (state) => {
+    builder.addCase(getRecipesFilter.rejected, (state) => {
       state.isFetching = false
-      state.recipes = mockRecipesRandomModel
+      state.recipes = mockRecipesModel
     })
   },
   selectors: {
-    recipesRandom: (state) => state.recipes.recipes,
+    filterRecipes: (state) => state.recipes.recipes,
   },
 })
 
-export const { recipesRandom } = recipesSlice.getSelectors((rootState: RootState) => rootState.recipes)
+export const { filterRecipes } = recipesSlice.getSelectors((rootState: RootState) => rootState.recipes)
 
 export default recipesSlice.reducer
