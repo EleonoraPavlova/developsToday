@@ -1,8 +1,8 @@
 import { ArrowUpDown } from 'lucide-react'
 import { ReactElement } from 'react'
 
-import { Button } from '@/components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { Button } from '@/shared/button'
 import { Typography } from '@/shared/typography'
 import { SORT_OPTIONS, SortOption } from '@/types/recipes.model'
 

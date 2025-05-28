@@ -1,9 +1,9 @@
 import { ChangeEvent, ReactElement } from 'react'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import DropdownComponent from '@/shared/dropdown-menu'
-import SortPopover from '@/shared/sortPopover'
+import DropdownComponent from '@/components/dropdown-menu'
+import SortPopover from '@/components/sortPopover'
+import { Button } from '@/shared/button'
+import { Input } from '@/shared/input'
 import { Cuisine } from '@/types/common'
 import { SortOption } from '@/types/recipes.model'
 

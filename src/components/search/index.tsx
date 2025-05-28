@@ -3,9 +3,9 @@
 import { useRouter } from 'next/navigation'
 import { ChangeEvent, ReactElement, useState } from 'react'
 
+import TopBar from '@/components/topBar'
 import { CUISINES } from '@/const/cuisines.const'
 import { Card } from '@/shared/card'
-import TopBar from '@/shared/topBar'
 import { Typography } from '@/shared/typography'
 import { Cuisine } from '@/types/common'
 import { SORT_OPTIONS, SortOption } from '@/types/recipes.model'

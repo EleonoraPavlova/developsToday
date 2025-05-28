@@ -1,7 +1,7 @@
 import { ArrowRight, ShoppingCart } from 'lucide-react'
 import { ReactElement } from 'react'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/shared/button'
 import { Typography } from '@/shared/typography'
 
 type Props = {

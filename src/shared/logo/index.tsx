@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { MouseEvent, ReactElement } from 'react'
 
 import { ROUTES } from '@/app/api/routes'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/shared/button'
 import { Typography } from '@/shared/typography'
 
 interface Props {

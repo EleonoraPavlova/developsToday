@@ -2,8 +2,8 @@ import { ReactElement, Suspense } from 'react'
 
 import { getRecipeById } from '@/app/api/recipesApi'
 import RecipeItem from '@/components/recipes/recipeItem'
-import { Progress } from '@/components/ui/progress'
 import { Card } from '@/shared/card'
+import { Progress } from '@/shared/progress'
 import { Typography } from '@/shared/typography'
 
 const RecipeDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }): Promise<ReactElement> => {

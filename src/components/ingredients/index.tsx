@@ -8,7 +8,7 @@ interface Props {
 
 const IngredientsList = ({ ingredients }: Props): ReactElement => {
   return (
-    <ul className='list-disc list-inside space-y-1'>
+    <ul className='list-disc list-inside space-y-1 mb-3'>
       {ingredients.map((item) => (
         <li key={item.id}>
           {item.name} — {item.amount} {item.unit}

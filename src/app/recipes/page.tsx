@@ -2,9 +2,10 @@ import { ReactElement, Suspense } from 'react'
 
 import { getRecipesFilterApi } from '@/app/api/recipesApi'
 import RecipesList from '@/components/recipes/recipesList'
-import { Progress } from '@/components/ui/progress'
 import { getFirstString } from '@/lib/getFirstString'
+import { removeDuplicatesByKey } from '@/lib/removeDuplicatesByKey'
 import { Card } from '@/shared/card'
+import { Progress } from '@/shared/progress'
 import { Typography } from '@/shared/typography'
 import { SORT_OPTIONS, SortOption } from '@/types/recipes.model'
 
@@ -31,6 +32,8 @@ const RecipesPage = async ({
     sort: sortValue,
   })
 
+  const uniqueRecipes = removeDuplicatesByKey(data.results)
+
   return (
     <div className='py-0 px-[30px]'>
       <Card>
@@ -41,7 +44,7 @@ const RecipesPage = async ({
         </div>
         {data.results.length ? (
           <Suspense fallback={<Progress />}>
-            <RecipesList recipes={data.results} />
+            <RecipesList recipes={uniqueRecipes} />
           </Suspense>
         ) : (
           <Typography as='h6' variant='subtitle1'>
