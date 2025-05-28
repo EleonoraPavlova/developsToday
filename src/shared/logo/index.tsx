@@ -36,7 +36,7 @@ const Logo = ({ isClickable = true }: Props): ReactElement => {
         <Typography as='h3' variant='h2'>
           {logoName}
         </Typography>
-        <Typography variant='subtitle2' gray>
+        <Typography variant='subtitle2' className='hidden sm:block' gray>
           {slogan}
         </Typography>
       </div>

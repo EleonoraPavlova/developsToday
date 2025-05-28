@@ -26,7 +26,7 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
     <html lang='en' className={atma.className}>
       <body>
         <Header />
-        <main className='min-h-screen'>{children}</main>
+        <main className='min-h-screen mb-3.5'>{children}</main>
       </body>
     </html>
   )

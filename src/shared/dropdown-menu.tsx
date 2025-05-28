@@ -14,11 +14,11 @@ const DropdownComponent = ({ data, onChange, cuisines }: Props): ReactElement =>
   return (
     <Dropdown>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline' className='min-w-[300px]'>
+        <Button variant='outline' className='w-full sm:w-[220px]'>
           {cuisines || 'Select Cuisine'}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='min-w-[300px]'>
+      <DropdownMenuContent className='w-full sm:w-[220px]'>
         {data?.map((item) => (
           <DropdownMenuItem key={item} onClick={() => onChange(item)}>
             {item}

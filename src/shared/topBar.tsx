@@ -35,9 +35,15 @@ const TopBar = ({
   onNext,
 }: Props): ReactElement => {
   return (
-    <div className='flex gap-10 w-full sticky top-0 bg-background z-10 pb-3'>
+    <div className='flex flex-wrap gap-10 w-full sticky top-0 bg-background z-10 pb-3 sm:px-6'>
       <DropdownComponent data={data} onChange={onChange} cuisines={cuisines} />
-      <Input placeholder='Searching of dishes' isSearch width='w-[250]' onChange={setSearch} value={search || ''} />
+      <Input
+        placeholder='Searching of dishes'
+        isSearch
+        width='sm:w-[250px]'
+        onChange={setSearch}
+        value={search || ''}
+      />
       <Input
         type='number'
         width='w-50'

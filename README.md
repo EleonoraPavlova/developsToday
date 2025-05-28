@@ -1,38 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Recipe Search App 🍝
 
-## Getting Started
+## Description
 
-First, run the development server:
+An application to search for recipes using Next.js and the Spoonacular API.  
+Allows you to search recipes by name, cuisine, and preparation time, view recipe lists, and see detailed recipe information.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Link:
+> [Recipe-App](https://develops-today-pi.vercel.app/) - web application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation and Running
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+   cd <repo-folder>
 
-## Learn More
+2. Install dependencies:
+   ```bash
+    npm install
+    # or
+    yarn
 
-To learn more about Next.js, take a look at the following resources:
+3. Run the development server:
+   ```bash
+    npm run dev
+    # or
+    yarn dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Home Page ( / )
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- SSR fetching recipes from Spoonacular API for random recipes
+- Input field for recipe query
+- Dropdown to select cuisine
+- Numeric input for max preparation time
+- Sort Popover for sort by cuisine
+- "Next" button enabled only if at least one field is filled
+- Navigates to `/recipes` page with query parameters on button click
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-# developsToday
+### Recipes Page (`/recipes`)
+
+- SSR fetching recipes from Spoonacular API
+- Displays list of recipes with images and titles
+- Click on a recipe navigates to the recipe detail page
+
+### Recipe Details Page (`/recipes/[id]`)
+
+- SSR fetches detailed recipe information by ID
+- Displays recipe title, ingredients list, and other data
+
+
+
+
+## Technical Details
+
+- Built with Next.js using the App Router
+- Used React Suspense to handle loading states (both for components and data)
+- Styled with Tailwind CSS for responsive design and accessibility
+- Implemented UI components using Radix UI for accessibility and composability
+- Added Husky for Git hooks to ensure code quality (e.g., linting/prettier checks on commit)
+- Proper error handling for all API requests
+
+
+
+## Resources
+
+- Spoonacular API Documentation: https://spoonacular.com/food-api/docs#Authentication
+- Next.js App Router Docs: https://nextjs.org/docs/app
+- Tailwind CSS: https://tailwindcss.com/docs
