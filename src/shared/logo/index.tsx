@@ -2,6 +2,7 @@ import { Beef, ChefHat, CookingPot } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { MouseEvent, ReactElement } from 'react'
 
+import { ROUTES } from '@/app/api/routes'
 import { Button } from '@/components/ui/button'
 import { Typography } from '@/shared/typography'
 
@@ -18,7 +19,7 @@ const Logo = ({ isClickable = true }: Props): ReactElement => {
   const handleClick = (e: MouseEvent<HTMLElement>) => {
     if (isClickable) {
       e.preventDefault()
-      router.push('/')
+      router.push(ROUTES.home)
     }
   }
 
