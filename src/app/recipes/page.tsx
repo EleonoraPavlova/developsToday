@@ -1,3 +1,5 @@
+import { ReactElement } from 'react'
+
 import RecipesList from '@/components/recipesList'
 import { getFirstString } from '@/lib/getFirstString'
 import { Card } from '@/shared/card'
@@ -9,7 +11,7 @@ const RecipesPage = async ({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}): Promise<JSX.Element> => {
+}): Promise<ReactElement> => {
   const params = await searchParams
 
   const query = getFirstString(params.query)
