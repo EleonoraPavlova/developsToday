@@ -5,7 +5,7 @@ import { ReactElement, ReactNode } from 'react'
 import { ROUTES } from '@/app/api/routes'
 import IngredientsList from '@/components/ingredients'
 import { Typography } from '@/shared/typography'
-import { Recipe, RecipesResponseResult } from '@/store/models/recipes.model'
+import { Recipe, RecipesResponseResult } from '@/types/recipes.model'
 
 interface Props {
   recipe: Recipe | RecipesResponseResult
@@ -32,12 +32,13 @@ const RecipeItem = ({ recipe, isFullVersion = false }: Props): ReactElement => {
       <Typography as='h4' variant='h4' className='line-clamp-2'>
         {recipe.title}
       </Typography>
-      {'aggregateLikes' in recipe && <Typography>❤️ {recipe.aggregateLikes}</Typography>}
+      <div className='flex gap-3 justify-between'>
+        {'aggregateLikes' in recipe && <Typography>❤️ {recipe.aggregateLikes}</Typography>}
 
-      {'cookingMinutes' in recipe && typeof recipe.cookingMinutes === 'number' && recipe.cookingMinutes > 0 && (
-        <Typography>⏱️ Min: {recipe.cookingMinutes}</Typography>
-      )}
-
+        {'cookingMinutes' in recipe && typeof recipe.cookingMinutes === 'number' && recipe.cookingMinutes > 0 && (
+          <Typography>⏱️ Min: {recipe.cookingMinutes}</Typography>
+        )}
+      </div>
       {isFullVersion && 'extendedIngredients' in recipe && Array.isArray(recipe.extendedIngredients) && (
         <>
           <Typography>🧂Ingredients ( {recipe.extendedIngredients.length} )</Typography>

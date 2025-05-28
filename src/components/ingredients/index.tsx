@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { Ingredient } from '@/store/models/recipes.model'
+import { Ingredient } from '@/types/recipes.model'
 
 interface Props {
   ingredients: Ingredient[]

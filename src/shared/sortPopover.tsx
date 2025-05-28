@@ -4,7 +4,7 @@ import { ReactElement } from 'react'
 import { Button } from '@/components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Typography } from '@/shared/typography'
-import { SORT_OPTIONS, SortOption } from '@/store/models/recipes.model'
+import { SORT_OPTIONS, SortOption } from '@/types/recipes.model'
 
 interface Props {
   sort: SortOption

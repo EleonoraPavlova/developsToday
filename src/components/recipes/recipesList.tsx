@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
 import RecipeItem from '@/components/recipes/recipeItem'
-import { Recipe, RecipesResponseResult } from '@/store/models/recipes.model'
+import { Recipe, RecipesResponseResult } from '@/types/recipes.model'
 
 type Props = {
   recipes: Recipe[] | RecipesResponseResult[]

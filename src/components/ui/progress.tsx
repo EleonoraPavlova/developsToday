@@ -1,11 +1,11 @@
 'use client'
 
 import * as ProgressPrimitive from '@radix-ui/react-progress'
-import { ComponentProps } from 'react'
+import { ComponentProps, ReactElement } from 'react'
 
 import { cn } from '@/lib/utils'
 
-const Progress = ({ className, value, ...props }: ComponentProps<typeof ProgressPrimitive.Root>) => {
+const Progress = ({ className, value, ...props }: ComponentProps<typeof ProgressPrimitive.Root>): ReactElement => {
   return (
     <ProgressPrimitive.Root
       data-slot='progress'

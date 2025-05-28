@@ -6,7 +6,7 @@ import {
   RecipesModel,
   RecipesRandomRequest,
   RecipesResponse,
-} from '@/store/models/recipes.model'
+} from '@/types/recipes.model'
 
 export const getRecipesRandomApi = async (params: RecipesRandomRequest): Promise<RecipesModel> => {
   'use cache'
