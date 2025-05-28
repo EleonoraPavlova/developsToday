@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import RecipesList from '@/components/recipesList'
+import RecipesList from '@/components/recipes/recipesList'
 import { getFirstString } from '@/lib/getFirstString'
 import { Card } from '@/shared/card'
 import { Typography } from '@/shared/typography'
