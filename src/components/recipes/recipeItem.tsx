@@ -28,17 +28,18 @@ const RecipeItem = ({ recipe, isFullVersion = false }: Props): ReactElement => {
             sizes='(max-width: 768px) 100vw, 33vw'
           />
         </div>
-      </Wrapper>
-      <Typography as='h4' variant='h4' className='line-clamp-2'>
-        {recipe.title}
-      </Typography>
-      <div className='flex gap-3 justify-between'>
-        {'aggregateLikes' in recipe && <Typography>❤️ {recipe.aggregateLikes}</Typography>}
 
-        {'cookingMinutes' in recipe && typeof recipe.cookingMinutes === 'number' && recipe.cookingMinutes > 0 && (
-          <Typography>⏱️ Min: {recipe.cookingMinutes}</Typography>
-        )}
-      </div>
+        <Typography as='h4' variant='h4' className='line-clamp-2'>
+          {recipe.title}
+        </Typography>
+        <div className='flex gap-3 justify-between'>
+          {'aggregateLikes' in recipe && <Typography>❤️ {recipe.aggregateLikes}</Typography>}
+
+          {'cookingMinutes' in recipe && typeof recipe.cookingMinutes === 'number' && recipe.cookingMinutes > 0 && (
+            <Typography>⏱️ Min: {recipe.cookingMinutes}</Typography>
+          )}
+        </div>
+      </Wrapper>
       {isFullVersion && 'extendedIngredients' in recipe && Array.isArray(recipe.extendedIngredients) && (
         <>
           <Typography>🧂Ingredients ( {recipe.extendedIngredients.length} )</Typography>
