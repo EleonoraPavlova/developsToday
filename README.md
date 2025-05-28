@@ -8,31 +8,38 @@ Allows you to search recipes by name, cuisine, and preparation time, view recipe
 ---
 
 ### Link:
+
 > [Recipe-App](https://develops-today-pi.vercel.app/) - web application
 
 ## Installation and Running
 
 1. Clone the repository:
+
    ```bash
    git clone <repo-url>
    cd <repo-folder>
 
+   ```
+
 2. Install dependencies:
+
    ```bash
     npm install
     # or
     yarn
+
+   ```
 
 3. Run the development server:
    ```bash
     npm run dev
     # or
     yarn dev
+   ```
 
 ## Features
 
 ### Home Page ( / )
-
 
 - SSR fetching recipes from Spoonacular API for random recipes
 - Input field for recipe query
@@ -41,7 +48,6 @@ Allows you to search recipes by name, cuisine, and preparation time, view recipe
 - Sort Popover for sort by cuisine
 - "Next" button enabled only if at least one field is filled
 - Navigates to `/recipes` page with query parameters on button click
-
 
 ### Recipes Page (`/recipes`)
 
@@ -54,19 +60,14 @@ Allows you to search recipes by name, cuisine, and preparation time, view recipe
 - SSR fetches detailed recipe information by ID
 - Displays recipe title, ingredients list, and other data
 
-
-
-
 ## Technical Details
 
 - Built with Next.js using the App Router
-- Used React Suspense to handle loading states (both for components and data)
+- Used React Suspense to handle loading states
 - Styled with Tailwind CSS for responsive design and accessibility
 - Implemented UI components using Radix UI for accessibility and composability
 - Added Husky for Git hooks to ensure code quality (e.g., linting/prettier checks on commit)
 - Proper error handling for all API requests
-
-
 
 ## Resources
 
