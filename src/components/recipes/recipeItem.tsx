@@ -14,12 +14,16 @@ interface Props {
 
 const RecipeItem = ({ recipe, isFullVersion = false }: Props): ReactElement => {
   const Wrapper = ({ children }: { children: ReactNode }) =>
-    isFullVersion ? <div>{children}</div> : <Link href={ROUTES.getRecipeDetails(recipe.id)}>{children}</Link>
+    isFullVersion ? (
+      <div className='flex flex-col gap-3 mb-2'>{children}</div>
+    ) : (
+      <Link href={ROUTES.getRecipeDetails(recipe.id)}>{children}</Link>
+    )
 
   return (
-    <div className='rounded-2xl border p-3 flex flex-col gap-2 shadow-sm'>
+    <div className='rounded-2xl border p-3 shadow-sm'>
       <Wrapper>
-        <div className='relative w-full h-[190px] rounded-xl overflow-hidden'>
+        <div className='relative w-full h-[190px] rounded-xl overflow-hidden mb-2'>
           <Image
             src={recipe.image || 'images/mockImage.jpg'}
             alt={recipe.title}
@@ -42,7 +46,9 @@ const RecipeItem = ({ recipe, isFullVersion = false }: Props): ReactElement => {
       </Wrapper>
       {isFullVersion && 'extendedIngredients' in recipe && Array.isArray(recipe.extendedIngredients) && (
         <>
-          <Typography>🧂Ingredients ( {recipe.extendedIngredients.length} )</Typography>
+          <Typography as='h6' className='mb-2'>
+            🧂Ingredients ( {recipe.extendedIngredients.length} )
+          </Typography>
           <IngredientsList ingredients={recipe.extendedIngredients} />
           <Typography>🌾 Gluten Free: {recipe.glutenFree ? 'Yes' : 'No'}</Typography>
         </>
