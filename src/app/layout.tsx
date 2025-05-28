@@ -28,7 +28,7 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
       <body>
         <Providers>
           <Header />
-          <main className='min-h-screen'>{children}</main>
+          <main className='min-h-screen py-0 px-[30px]'>{children}</main>
         </Providers>
       </body>
     </html>

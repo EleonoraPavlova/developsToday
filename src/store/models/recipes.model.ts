@@ -3,6 +3,7 @@ export type RecipesRandomRequest = {
   includeTags?: string
   excludeTags?: string
   number: number
+  sort?: SortOption
 }
 
 export type RecipesFilterRequest = {
@@ -22,7 +23,7 @@ export const SORT_OPTIONS = [
 
 export type SortOption = (typeof SORT_OPTIONS)[number]['value']
 
-export type RecipesRandomModel = {
+export type RecipesModel = {
   recipes: Recipe[]
 }
 
@@ -65,6 +66,15 @@ export type Recipe = {
   spoonacularScore: number
   spoonacularSourceUrl: string
 }
+
+export type RecipesResponse = {
+  offset: number
+  number: number
+  results: RecipesResponseResult[]
+  totalResults: number
+}
+
+export type RecipesResponseResult = Pick<Recipe, 'id' | 'title' | 'image' | 'imageType'>
 
 export type Ingredient = {
   id: number
