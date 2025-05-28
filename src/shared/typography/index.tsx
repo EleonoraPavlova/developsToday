@@ -12,8 +12,6 @@ export type TypographyVariant =
   | 'h2'
   | 'h3'
   | 'h4'
-  | 'link1'
-  | 'link2'
   | 'overline'
   | 'subtitle1'
   | 'subtitle2'

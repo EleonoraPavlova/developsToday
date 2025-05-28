@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import DropdownComponent from '@/shared/dropdown-menu'
 import SortPopover from '@/shared/sortPopover'
-import { SortOption } from '@/store/models/recipes.model'
 import { Cuisine } from '@/types/common'
+import { SortOption } from '@/types/recipes.model'
 
 interface Props {
   data: Cuisine[]

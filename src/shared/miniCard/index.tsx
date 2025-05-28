@@ -2,6 +2,7 @@ import { ArrowRight, ShoppingCart } from 'lucide-react'
 import { ReactElement } from 'react'
 
 import { Button } from '@/components/ui/button'
+import { Typography } from '@/shared/typography'
 
 type Props = {
   count: number
@@ -11,7 +12,7 @@ type Props = {
 const MiniCard = ({ count, sum }: Props): ReactElement => {
   return (
     <Button variant='default' className='group relative'>
-      <b>{sum}</b>
+      <Typography>{sum}</Typography>
       <span className='h-full w-[1px] bg-background mx-2' />
       <span className='flex items-center gap-1 transition duration-300 group-hover:opacity-0'>
         <ShoppingCart width={16} height={16} className='relative' strokeWidth={2} />

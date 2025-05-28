@@ -7,8 +7,8 @@ import { CUISINES } from '@/const/cuisines.const'
 import { Card } from '@/shared/card'
 import TopBar from '@/shared/topBar'
 import { Typography } from '@/shared/typography'
-import { SORT_OPTIONS, SortOption } from '@/store/models/recipes.model'
 import { Cuisine } from '@/types/common'
+import { SORT_OPTIONS, SortOption } from '@/types/recipes.model'
 
 const Search = (): ReactElement => {
   const router = useRouter()

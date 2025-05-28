@@ -1,11 +1,12 @@
-import { ReactElement } from 'react'
+import { ReactElement, Suspense } from 'react'
 
+import { getRecipesFilterApi } from '@/app/api/recipesApi'
 import RecipesList from '@/components/recipes/recipesList'
+import { Progress } from '@/components/ui/progress'
 import { getFirstString } from '@/lib/getFirstString'
 import { Card } from '@/shared/card'
 import { Typography } from '@/shared/typography'
-import { getRecipesFilterApi } from '@/store/actions/recipesApi'
-import { SORT_OPTIONS, SortOption } from '@/store/models/recipes.model'
+import { SORT_OPTIONS, SortOption } from '@/types/recipes.model'
 
 const RecipesPage = async ({
   searchParams,
@@ -31,20 +32,24 @@ const RecipesPage = async ({
   })
 
   return (
-    <Card>
-      <div className='pb-4 text-center'>
-        <Typography as='h6' variant='subtitle1'>
-          Recipes by filters
-        </Typography>
-      </div>
-      {data.results.length ? (
-        <RecipesList recipes={data.results} />
-      ) : (
-        <Typography as='h6' variant='subtitle1'>
-          No results
-        </Typography>
-      )}
-    </Card>
+    <div className='py-0 px-[30px]'>
+      <Card>
+        <div className='pb-4 text-center'>
+          <Typography as='h6' variant='subtitle1'>
+            Recipes by filters
+          </Typography>
+        </div>
+        {data.results.length ? (
+          <Suspense fallback={<Progress />}>
+            <RecipesList recipes={data.results} />
+          </Suspense>
+        ) : (
+          <Typography as='h6' variant='subtitle1'>
+            No results
+          </Typography>
+        )}
+      </Card>
+    </div>
   )
 }
 export default RecipesPage

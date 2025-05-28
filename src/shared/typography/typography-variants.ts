@@ -13,9 +13,6 @@ export const typographyVariants = cva('m-0 p-0 break-words whitespace-normal', {
       subtitle2: 'text-s leading-m font-regular xs:text-xs xs:leading-s',
       overline: 'text-xs leading-s font-bold xs:text-xxs xs:leading-s',
       caption: 'text-xs leading-s font-regular xs:text-xxs xs:leading-s',
-      link1: 'text-s leading-m font-regular text-info-500 cursor-pointer visited:text-info-900 xs:text-xs xs:leading-s',
-      link2:
-        'text-xs leading-s font-regular text-info-500 cursor-pointer visited:text-info-900 xs:text-xxs xs:leading-s',
       error: 'text-xs text-destructive xs:text-xxs',
       gray: 'text-muted-foreground',
     },
