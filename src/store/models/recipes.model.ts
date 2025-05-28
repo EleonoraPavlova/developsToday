@@ -76,13 +76,6 @@ export type RecipesResponse = {
 
 export type RecipesResponseResult = Pick<Recipe, 'id' | 'title' | 'image' | 'imageType'>
 
-export type RecipeParamsById = {
-  id: number
-  includeNutrition?: boolean
-  addWinePairing?: boolean
-  addTasteData?: boolean
-}
-
 export type Ingredient = {
   id: number
   aisle: string

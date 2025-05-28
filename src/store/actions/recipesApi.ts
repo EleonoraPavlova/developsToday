@@ -1,6 +1,12 @@
 import { spoonacular } from '@/app/api/_utils/axios'
 import { API_ROUTES } from '@/app/api/apiRoutes'
-import { RecipesFilterRequest, RecipesModel, RecipesRandomRequest, RecipesResponse } from '@/store/models/recipes.model'
+import {
+  Recipe,
+  RecipesFilterRequest,
+  RecipesModel,
+  RecipesRandomRequest,
+  RecipesResponse,
+} from '@/store/models/recipes.model'
 
 export const getRecipesRandomApi = async (params: RecipesRandomRequest): Promise<RecipesModel> => {
   'use cache'
@@ -22,7 +28,7 @@ export const getRecipesFilterApi = async (params: RecipesFilterRequest): Promise
   }
 }
 
-export const getRecipeById = async (params: { id: number }): Promise<any> => {
+export const getRecipeById = async (params: { id: number }): Promise<Recipe> => {
   'use cache'
   try {
     const url = API_ROUTES.recipeById(params.id)

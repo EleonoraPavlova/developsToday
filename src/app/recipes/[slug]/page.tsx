@@ -5,13 +5,7 @@ import { Card } from '@/shared/card'
 import { Typography } from '@/shared/typography'
 import { getRecipeById } from '@/store/actions/recipesApi'
 
-interface Props {
-  params: {
-    slug: string
-  }
-}
-
-const RecipeDetailsPage = async ({ params }: Props): Promise<ReactElement> => {
+const RecipeDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }): Promise<ReactElement> => {
   const { slug } = await params
   const recipe = await getRecipeById({ id: Number(slug) })
 
