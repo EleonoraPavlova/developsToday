@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import { Atma } from 'next/font/google'
 import { ReactNode } from 'react'
 
-import { Providers } from '@/providers/provider'
 import { Header } from '@/shared/header'
 
 const atma = Atma({
@@ -26,10 +25,8 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <html lang='en' className={atma.className}>
       <body>
-        <Providers>
-          <Header />
-          <main className='min-h-screen py-0 px-[30px]'>{children}</main>
-        </Providers>
+        <Header />
+        <main className='min-h-screen py-0 px-[30px]'>{children}</main>
       </body>
     </html>
   )

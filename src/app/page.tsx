@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import RecipesList from '@/components/recipesList'
+import RecipesList from '@/components/recipes/recipesList'
 import Search from '@/components/search'
 import { getRecipesRandomApi } from '@/store/actions/recipesApi'
 

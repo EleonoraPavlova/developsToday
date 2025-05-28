@@ -1,11 +1,12 @@
 'use client'
 
-import { ShoppingCart, User } from 'lucide-react'
+import { User } from 'lucide-react'
 import { ComponentPropsWithoutRef, ComponentRef, forwardRef, ReactElement } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Logo from '@/shared/logo'
+import MiniCard from '@/shared/miniCard'
 
 type HeaderProps = ComponentPropsWithoutRef<'header'>
 type HeaderRef = ComponentRef<'header'>
@@ -20,9 +21,7 @@ export const Header = forwardRef<HeaderRef, HeaderProps>(({ className, ...rest }
             <User width={10} height={10} />
             Login
           </Button>
-          <Button variant='outline'>
-            <ShoppingCart width={16} height={16} />
-          </Button>
+          <MiniCard count={145} sum={14} />
         </div>
       </div>
       <span className='flex w-full h-[1px] bg-muted-foreground/30' />
