@@ -3,10 +3,11 @@
 import { User } from 'lucide-react'
 import { ComponentPropsWithoutRef, ComponentRef, forwardRef, ReactElement } from 'react'
 
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Logo from '@/shared/logo'
 import MiniCard from '@/shared/miniCard'
+
+import { Button } from './button'
 
 type HeaderProps = ComponentPropsWithoutRef<'header'>
 type HeaderRef = ComponentRef<'header'>

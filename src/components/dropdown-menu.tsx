@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
-import { Button } from '@/components/ui/button'
 import { Dropdown, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown'
+import { Button } from '@/shared/button'
 import { Cuisine } from '@/types/common'
 
 interface Props {

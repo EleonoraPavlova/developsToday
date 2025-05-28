@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { Progress } from '@/components/ui/progress'
+import { Progress } from '@/shared/progress'
 
 const Loading = (): ReactElement => {
   return <Progress />
