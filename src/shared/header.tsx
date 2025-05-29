@@ -15,9 +15,9 @@ type HeaderRef = ComponentRef<'header'>
 export const Header = forwardRef<HeaderRef, HeaderProps>(({ className, ...rest }, ref): ReactElement => {
   return (
     <header ref={ref} className={cn('w-full bg-background rounded-t-[30px]', className)} {...rest}>
-      <div className='flex items-center gap-4 py-[20px] px-[64px] justify-between'>
+      <div className='flex items-center gap-4 py-4 px-4 sm:px-[64px] sm:py-[20px] justify-between'>
         <Logo />
-        <div className='flex flex-wrap items-center gap-2'>
+        <div className='flex flex-wrap items-center gap-2 justify-center sm:justify-start'>
           <Button variant='outline'>
             <User width={10} height={10} />
             Login

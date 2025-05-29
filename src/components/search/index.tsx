@@ -44,6 +44,8 @@ const Search = (): ReactElement => {
     router.push(`/recipes?${params.toString()}`)
   }
 
+  const isDisabled = ![cuisines, cookingTime, search].some(Boolean)
+
   return (
     <Card className='gap-[20px] flex flex-col'>
       <Typography as='h1' variant='h1'>
@@ -52,7 +54,7 @@ const Search = (): ReactElement => {
       <TopBar
         data={[...CUISINES]}
         cookingTime={cookingTime}
-        disabled={!cuisines && !cookingTime && !search}
+        disabled={isDisabled}
         cuisines={cuisines}
         search={search}
         sort={sort}

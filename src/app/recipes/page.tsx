@@ -1,10 +1,10 @@
 import { ReactElement, Suspense } from 'react'
 
 import { getRecipesFilterApi } from '@/app/api/recipesApi'
+import ContentPanel from '@/components/contentPanel'
 import RecipesList from '@/components/recipes/recipesList'
 import { getFirstString } from '@/lib/getFirstString'
 import { removeDuplicatesByKey } from '@/lib/removeDuplicatesByKey'
-import { Card } from '@/shared/card'
 import { Progress } from '@/shared/progress'
 import { Typography } from '@/shared/typography'
 import { SORT_OPTIONS, SortOption } from '@/types/recipes.model'
@@ -35,24 +35,17 @@ const RecipesPage = async ({
   const uniqueRecipes = removeDuplicatesByKey(data.results)
 
   return (
-    <div className='py-0 px-[30px]'>
-      <Card>
-        <div className='pb-4 text-center'>
-          <Typography as='h6' variant='subtitle1'>
-            Recipes by filters
-          </Typography>
-        </div>
-        {data.results.length ? (
-          <Suspense fallback={<Progress />}>
-            <RecipesList recipes={uniqueRecipes} />
-          </Suspense>
-        ) : (
-          <Typography as='h6' variant='subtitle1'>
-            No results
-          </Typography>
-        )}
-      </Card>
-    </div>
+    <ContentPanel title='Recipes by filters'>
+      {data.results.length ? (
+        <Suspense fallback={<Progress />}>
+          <RecipesList recipes={uniqueRecipes} />
+        </Suspense>
+      ) : (
+        <Typography as='h6' variant='subtitle1'>
+          No results
+        </Typography>
+      )}
+    </ContentPanel>
   )
 }
 export default RecipesPage
