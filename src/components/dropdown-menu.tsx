@@ -7,7 +7,7 @@ import { Cuisine } from '@/types/common'
 interface Props {
   data: Cuisine[]
   cuisines: Cuisine | ''
-  onChange: (_cuisines: Cuisine) => void
+  onChange: (_cuisine: Cuisine) => void
 }
 
 const DropdownComponent = ({ data, onChange, cuisines }: Props): ReactElement => {

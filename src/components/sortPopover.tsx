@@ -1,5 +1,5 @@
 import { ArrowUpDown } from 'lucide-react'
-import { ReactElement } from 'react'
+import { ReactElement, useState } from 'react'
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Button } from '@/shared/button'
@@ -12,8 +12,15 @@ interface Props {
 }
 
 const SortPopover = ({ sort, setSort }: Props): ReactElement => {
+  const [open, setOpen] = useState(false)
+
+  const selectSortHandler = (item: SortOption) => {
+    setSort(item)
+    setOpen(!open)
+  }
+
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger className='flex items-center gap-2 cursor-pointer'>
         <ArrowUpDown width={16} height={16} />
         <Typography>Sort by:</Typography>
@@ -21,7 +28,7 @@ const SortPopover = ({ sort, setSort }: Props): ReactElement => {
       </PopoverTrigger>
       <PopoverContent className='flex flex-col gap-2 p-2 w-[180px]'>
         {SORT_OPTIONS.map(({ label, value }) => (
-          <Button key={value} variant='ghost' onClick={() => setSort(value)}>
+          <Button key={value} variant='ghost' onClick={() => selectSortHandler(value)}>
             {label}
           </Button>
         ))}
